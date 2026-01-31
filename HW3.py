@@ -86,7 +86,17 @@ class CouponDispenser:
         pass
 
 
-    
+    def tally_distribution(self):
+        if len(self.issued_indices) == 0:
+            print("Empty")
+        else: 
+            for i in range(len(self.coupon_cards)):
+                coupon = self.coupon_cards[i]
+                count = 0
+                for issued_index in self.issued_indices:
+                     if issued_index == i:
+                        count += 1
+                print(f"{coupon} distribution count: {count}.")
 
 
 def main():
